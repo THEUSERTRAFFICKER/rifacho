@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="100%" height="100%">
+  <defs>
+    <linearGradient id="favRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF1E27" />
+      <stop offset="100%" stop-color="#991B1B" />
+    </linearGradient>
+    <linearGradient id="favGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047" />
+      <stop offset="100%" stop-color="#EAB308" />
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="#0A0A0A" />
+  <rect x="4" y="4" width="120" height="120" rx="24" fill="none" stroke="url(#favRed)" stroke-width="4" />
+  <!-- R letter stylized -->
+  <path d="M42 28 H75 C89 28 98 36 98 48 C98 58 92 65 82 68 L100 98 H82 L66 72 H56 V98 H42 V28 Z M56 40 V60 H74 C80 60 84 56 84 50 C84 43 80 40 74 40 Z" fill="url(#favGold)" />
+  <!-- Little lucky star -->
+  <polygon points="64,14 67,22 75,22 69,27 71,35 64,30 57,35 59,27 53,22 61,22" fill="#FFFFFF" />
+</svg>

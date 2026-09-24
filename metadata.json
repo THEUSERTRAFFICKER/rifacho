@@ -1,0 +1,8 @@
+{
+  "name": "La Tropa - Sorteos y Premios",
+  "description": "Plataforma oficial de sorteos de La Tropa. Adquiere tus números premiados para el Combo Tesla y verifica tus boletos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

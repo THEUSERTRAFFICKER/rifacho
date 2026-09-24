@@ -1,0 +1,264 @@
+@import "tailwindcss";
+
+/* Exact styles for Rifacho platform */
+
+:root {
+  --e-global-color-primary: #6EC1E4;
+  --e-global-color-secondary: #54595F;
+  --e-global-color-text: #7A7A7A;
+  --e-global-color-accent: #61CE70;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #ffffff;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Progress bar exact replica */
+.tuskcode-progress {
+  border: 1px solid #B0B0B0;
+  width: 100%;
+  min-width: 150px;
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(187, 0, 187, 0);
+  backdrop-filter: blur(2px) brightness(101%);
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  height: 28px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  background: #7f7f7f;
+}
+
+.tuskcode-bar {
+  box-shadow: inset 0px 12px 1.7px rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  text-align: center;
+  min-height: 28px;
+  background: #215ace;
+  height: 100%;
+  transition: width 0.6s ease;
+}
+
+.tuskcode-progress .tuskcode-text {
+  white-space: nowrap;
+  color: #ffffff;
+  font-weight: 600;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  pointer-events: none;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* Custom quantity purchase styles */
+.simple-ticket-buy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: 'Roboto', sans-serif;
+}
+
+#ticket_qty {
+  width: 90px;
+  height: 46px;
+  border: 1px solid #bdbdbd;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 500;
+  outline: none;
+  background: #fff;
+  color: #111;
+  transition: border-color 0.2s;
+}
+
+#ticket_qty:focus {
+  border-color: #CC0000;
+}
+
+#buyNumbersBtn {
+  height: 46px;
+  padding: 0 22px;
+  border: none;
+  border-radius: 4px;
+  background: #CC0000 !important;
+  color: #fff !important;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s !important;
+  box-shadow: none !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#buyNumbersBtn:hover {
+  opacity: 0.92;
+}
+
+.minimum-alert {
+  margin-top: 10px;
+  color: #CC0000;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+/* Action button replica */
+.rifacho-btn,
+.latropa-btn {
+  background-color: #CC0000;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 12px 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.1s;
+  cursor: pointer;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.rifacho-btn:hover,
+.latropa-btn:hover {
+  background-color: #b80000;
+}
+
+.rifacho-btn:active,
+.latropa-btn:active {
+  transform: scale(0.99);
+}
+
+/* Anti-copy tooltip matching Rifacho */
+#ays_tooltip {
+  display: block;
+  position: fixed;
+  z-index: 999999999;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border-radius: 4px;
+  padding: 6px 12px;
+  pointer-events: none;
+  animation: fadeIn 0.15s ease;
+}
+
+#ays_tooltip p {
+  margin: 0;
+  padding: 0;
+  color: #ff0000;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0px;
+  line-height: normal;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spinner {
+  to { transform: rotate(360deg); }
+}
+
+.spinner_loader {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  border-top-color: #000;
+  animation: spinner .6s linear infinite;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+/* ==============================================================================
+   REGLAS DE IMPRESIÓN OFICIAL (FUERZA EXACTAMENTE 1 PÁGINA LIMPIA EN PDF/IMPRESIÓN)
+   ============================================================================== */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 6mm;
+  }
+
+  /* Ocultar elementos de fondo y barras de interfaz */
+  body > * {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Si el modal del tiquete está abierto, hacerlo visible y quitar posición fixed */
+  .fixed.inset-0:has(#official-ticket-voucher),
+  div:has(> #official-ticket-voucher) {
+    position: static !important;
+    background: transparent !important;
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Ocultar barra de botones, avisos y pie del modal */
+  .fixed.inset-0 > div > div:first-child,
+  .fixed.inset-0 > div > div:nth-child(2),
+  .fixed.inset-0 > div > div:nth-child(3),
+  .fixed.inset-0 > div > div:last-child {
+    display: none !important;
+  }
+
+  /* Mostrar exclusivamente el tiquete centrado en una sola hoja */
+  #official-ticket-voucher {
+    display: block !important;
+    visibility: visible !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: 580px !important;
+    margin: 0 auto !important;
+    box-shadow: none !important;
+    border: 1px solid #777 !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  #official-ticket-voucher * {
+    visibility: visible !important;
+  }
+
+  #official-ticket-voucher .overflow-y-auto {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+}
+
